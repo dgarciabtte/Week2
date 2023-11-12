@@ -117,6 +117,59 @@ sources:
           - name: filename
             data_type: CHARACTER VARYING(256)
 
+      - name: fhvhv_tripdata
+        columns:
+          - name: hvfhs_license_num
+            data_type: CHARACTER VARYING(256)
+          - name: dispatching_base_num
+            data_type: CHARACTER VARYING(256)
+          - name: originating_base_num
+            data_type: CHARACTER VARYING(256)
+          - name: request_datetime
+            data_type: TIMESTAMP
+          - name: on_scene_datetime
+            data_type: TIMESTAMP
+          - name: pickup_datetime
+            data_type: TIMESTAMP
+          - name: dropoff_datetime
+            data_type: TIMESTAMP
+          - name: pulocationid
+            data_type: BIGINT
+          - name: dolocationid
+            data_type: BIGINT
+          - name: trip_miles
+            data_type: DOUBLE
+          - name: trip_time
+            data_type: BIGINT
+          - name: base_passenger_fare
+            data_type: DOUBLE
+          - name: tolls
+            data_type: DOUBLE
+          - name: bcf
+            data_type: DOUBLE
+          - name: sales_tax
+            data_type: DOUBLE
+          - name: congestion_surcharge
+            data_type: DOUBLE
+          - name: airport_fee
+            data_type: DOUBLE
+          - name: tips
+            data_type: DOUBLE
+          - name: driver_pay
+            data_type: DOUBLE
+          - name: shared_request_flag
+            data_type: CHARACTER VARYING(256)
+          - name: shared_match_flag
+            data_type: CHARACTER VARYING(256)
+          - name: access_a_ride_flag
+            data_type: CHARACTER VARYING(256)
+          - name: wav_request_flag
+            data_type: CHARACTER VARYING(256)
+          - name: wav_match_flag
+            data_type: CHARACTER VARYING(256)
+          - name: filename
+            data_type: CHARACTER VARYING(256)
+
       - name: green_tripdata
         columns:
           - name: vendorid
