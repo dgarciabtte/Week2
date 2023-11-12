@@ -1,30 +1,78 @@
 sources:
+
   - name: main
     tables:
+  
       - name: bike_data
+        description: "Citi Bikers ride information"
         columns:
           - name: tripduration
+            description: "Trip Duration (seconds)"
             data_type: CHARACTER VARYING(256)
+            tests:
+                  - dbt_expectations.expect_column_to_exist
+          
           - name: starttime
             data_type: CHARACTER VARYING(256)
+            description: "Start Time and Date"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: stoptime
             data_type: CHARACTER VARYING(256)
+            description: "Stop Time and Date"
+            tests:
+                - dbt_expectations.expect_column_to_exist
+
           - name: start station id
             data_type: CHARACTER VARYING(256)
+            description: " Station ID"
+            tests:
+                - dbt_expectations.expect_column_to_exist
+
           - name: start station name
             data_type: CHARACTER VARYING(256)
+            description: " Start Station Name"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+              
           - name: start station latitude
             data_type: CHARACTER VARYING(256)
+            description: "start Station Latitude"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: start station longitude
             data_type: CHARACTER VARYING(256)
+            description: "start station longitude"
+            tests:
+                 - dbt_expectations.expect_column_to_exist
+          
           - name: end station id
             data_type: CHARACTER VARYING(256)
+            description: "Station ID"
+            tests:
+                - dbt_expectations.expect_column_to_exist
+              
+
           - name: end station name
+            description: "Start Station Name"
             data_type: CHARACTER VARYING(256)
+            tests:
+                 - dbt_expectations.expect_column_to_exist
+
           - name: end station latitude
+            description: " End station Latitude"
             data_type: CHARACTER VARYING(256)
+            tests:
+                 - dbt_expectations.expect_column_to_exist
+
           - name: end station longitude
+            description: "End Station Longitude"
             data_type: CHARACTER VARYING(256)
+            tests:
+                 - dbt_expectations.expect_column_to_exist
+            
           - name: bikeid
             data_type: CHARACTER VARYING(256)
           - name: usertype
@@ -37,223 +85,731 @@ sources:
             data_type: CHARACTER VARYING(256)
           - name: rideable_type
             data_type: CHARACTER VARYING(256)
+
           - name: started_at
             data_type: CHARACTER VARYING(256)
+            description: "Start Time and Date"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: ended_at
+            description: "Stop Time and Date"
             data_type: CHARACTER VARYING(256)
+            tests:
+              - dbt_expectations.expect_column_to_exist
+
           - name: start_station_name
+            description: "Start Station Name"
             data_type: CHARACTER VARYING(256)
+            tests:
+              - dbt_expectations.expect_column_to_exist
+            
           - name: start_station_id
+            description:  "Station ID"
             data_type: CHARACTER VARYING(256)
+            tests:
+              - dbt_expectations.expect_column_to_exist
+
           - name: end_station_name
+            description: "End Station NAame"
             data_type: CHARACTER VARYING(256)
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: end_station_id
+            description:  "Station ID"
             data_type: CHARACTER VARYING(256)
+  
           - name: start_lat
+            description:  "Start Station Latitude"
             data_type: CHARACTER VARYING(256)
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: start_lng
+            description:  "Start Station Longitude"
             data_type: CHARACTER VARYING(256)
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: end_lat
+            description: "End Station Lontitude"
             data_type: CHARACTER VARYING(256)
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: end_lng
+            description: "End Station Longitude"
             data_type: CHARACTER VARYING(256)
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: member_casual
             data_type: CHARACTER VARYING(256)
-          - name: filename
-            data_type: CHARACTER VARYING(256)
 
+          - name: filename
+            description: " File Name"
+            data_type: CHARACTER VARYING(256)
+            tests:
+               - not_null
+               - dbt_expectations.expect_column_to_exist
+       
+      
       - name: central_park_weather
+        description: "Central Park Weather information"
         columns:
           - name: station
             data_type: CHARACTER VARYING(256)
+            description: "(17 characters) is the station identification code."
+         
           - name: name
             data_type: CHARACTER VARYING(256)
+            description: "(max 50 characters) is the name of the station (usually city/airport name). Optional
+             output field."
+
           - name: date
             data_type: CHARACTER VARYING(256)
+            description: "Date"
+            tests: 
+              - dbt_expectations.expect_column_to_exist
+              - not_null
+
+
           - name: awnd
             data_type: CHARACTER VARYING(256)
+            description: "Average daily wind speed (meters per second or miles per hour as per user preference)"
+            tests: 
+              - dbt_expectations.expect_column_to_exist
+       
+  
           - name: prcp
             data_type: CHARACTER VARYING(256)
+            description: "Precipitation (mm or inches as per user preference, inches to hundredths on Daily Form pdf file"
+            tests: 
+              - dbt_expectations.expect_column_to_exist
+
           - name: snow
             data_type: CHARACTER VARYING(256)
+            description: "Snow depth (mm or inches as per user preference, inches on Daily Form pdf file"
+            tests: 
+              - dbt_expectations.expect_column_to_exist
+
           - name: snwd
             data_type: CHARACTER VARYING(256)
+            description: "Maximum temperature (Fahrenheit or Celsius as per user preference, Fahrenheit to tenths on
+            Daily Form pdf file"
+            tests: 
+              - dbt_expectations.expect_column_to_exist
+
           - name: tmax
             data_type: CHARACTER VARYING(256)
+            description: "Maximum temperature (Fahrenheit or Celsius as per user preference, Fahrenheit to tenths on
+            Daily Form pdf file"
+            tests: 
+              - dbt_expectations.expect_column_to_exist
+              - not_null   
+            
           - name: tmin
             data_type: CHARACTER VARYING(256)
+            description: "Minimum temperature (Fahrenheit or Celsius as per user preference, Fahrenheit to tenths on"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+               - not_null  
+
           - name: filename
             data_type: CHARACTER VARYING(256)
+            description: "File name"
+
 
       - name: fhv_bases
+        description: "Monthly report including total dispatched trips, total dispatched shared trips, and unique dispatched vehicles aggregated by FHV (For-Hire Vehicle) base."
         columns:
           - name: base_number
+            description: "The TLC license number of the dispatching base"
             data_type: CHARACTER VARYING(256)
+            tests:
+               - not_null
+               - unique
+               - dbt_expectations.expect_column_to_exist
+
           - name: base_name
             data_type: CHARACTER VARYING(256)
+            description: "The official name of the base entity"
+            tests:
+               - not_null
+               - dbt_expectations.expect_column_to_exist
+
           - name: dba
             data_type: CHARACTER VARYING(256)
+            description: "The doing business as name of the base"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: dba_category
             data_type: CHARACTER VARYING(256)
+            description: "The doing business as name of the base category"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+               - accepted_values:
+                    values: ['juno', 'lyft', 'other', 'uber','via']
+      
           - name: filename
             data_type: CHARACTER VARYING(256)
+            description: "filename"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+               - not_null
 
       - name: fhv_tripdata
+        description: "FHV (For-Hire Vehicle) trip data information"
         columns:
           - name: dispatching_base_num
             data_type: CHARACTER VARYING(256)
+            tests:
+               - not_null
+               - dbt_expectations.expect_column_to_exist
+               - relationships:
+                    to: source('main','fhv_bases')
+                    field: base_number
+                    config:
+                      store_failures: true  # always store failures
+
+
           - name: pickup_datetime
             data_type: TIMESTAMP
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
           - name: dropoff_datetime
             data_type: TIMESTAMP
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
+
           - name: pulocationid
             data_type: DOUBLE
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: dolocationid
             data_type: DOUBLE
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: sr_flag
-            data_type: INTEGER
+            data_type: INTEGER  
+            
           - name: affiliated_base_number
             data_type: CHARACTER VARYING(256)
+            tests: 
+               - dbt_expectations.expect_column_to_exist
           - name: filename
             data_type: CHARACTER VARYING(256)
-
-      - name: fhvhv_tripdata
-        columns:
-          - name: hvfhs_license_num
-            data_type: CHARACTER VARYING(256)
-          - name: dispatching_base_num
-            data_type: CHARACTER VARYING(256)
-          - name: originating_base_num
-            data_type: CHARACTER VARYING(256)
-          - name: request_datetime
-            data_type: TIMESTAMP
-          - name: on_scene_datetime
-            data_type: TIMESTAMP
-          - name: pickup_datetime
-            data_type: TIMESTAMP
-          - name: dropoff_datetime
-            data_type: TIMESTAMP
-          - name: pulocationid
-            data_type: BIGINT
-          - name: dolocationid
-            data_type: BIGINT
-          - name: trip_miles
-            data_type: DOUBLE
-          - name: trip_time
-            data_type: BIGINT
-          - name: base_passenger_fare
-            data_type: DOUBLE
-          - name: tolls
-            data_type: DOUBLE
-          - name: bcf
-            data_type: DOUBLE
-          - name: sales_tax
-            data_type: DOUBLE
-          - name: congestion_surcharge
-            data_type: DOUBLE
-          - name: airport_fee
-            data_type: DOUBLE
-          - name: tips
-            data_type: DOUBLE
-          - name: driver_pay
-            data_type: DOUBLE
-          - name: shared_request_flag
-            data_type: CHARACTER VARYING(256)
-          - name: shared_match_flag
-            data_type: CHARACTER VARYING(256)
-          - name: access_a_ride_flag
-            data_type: CHARACTER VARYING(256)
-          - name: wav_request_flag
-            data_type: CHARACTER VARYING(256)
-          - name: wav_match_flag
-            data_type: CHARACTER VARYING(256)
-          - name: filename
-            data_type: CHARACTER VARYING(256)
+            tests: 
+               - dbt_expectations.expect_column_to_exist
 
       - name: green_tripdata
+        description: " Green trip data information"
         columns:
           - name: vendorid
             data_type: BIGINT
+            description: "A code indicating the LPEP provider that provided the record"
+            tests: 
+                 - dbt_expectations.expect_column_to_exist
+                         
+
           - name: lpep_pickup_datetime
             data_type: TIMESTAMP
-          - name: lpep_dropoff_datetime
+            description: "The date and time when the meter was engaged"
+            tests: 
+                 - dbt_expectations.expect_column_to_exist
+                 - not_null
+
+          - name: lpep_dropoff_datetime 
             data_type: TIMESTAMP
+            description: "The date and time when the meter was engaged."
+            tests:
+                    - dbt_expectations.expect_column_to_exist 
+  
+
           - name: store_and_fwd_flag
             data_type: CHARACTER VARYING(256)
+            tests:
+               - accepted_values: 
+                   values: ['Y','N']
+                   config:
+                     severity: warn
+
+          
+
           - name: ratecodeid
             data_type: DOUBLE
+            description: "The final rate code in effect at the end of the trip"
+            tests: 
+             - dbt_expectations.expect_column_to_exist
+    
+
           - name: pulocationid
             data_type: BIGINT
+            description: "TLC Taxi Zone in which the taximeter was engaged"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
           - name: dolocationid
             data_type: BIGINT
+            description: "TLC Taxi Zone in which the taximeter was disengaged"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+           
+
           - name: passenger_count
             data_type: DOUBLE
+            description: "The number of passengers in the vehicle"
+            tests: 
+                - dbt_expectations.expect_column_to_exist
+
+
           - name: trip_distance
             data_type: DOUBLE
+            description: "The elapsed trip distance in miles reported by the taximeter"
+            tests: 
+                - dbt_expectations.expect_column_to_exist
+            
+         
           - name: fare_amount
-            data_type: DOUBLE
+            data_type: DOUBLE    
+            description: "The time-and-distance fare calculated by the meter"
+            tests:    
+                  - dbt_expectations.expect_column_to_exist
+                  - not_null
+         
+
           - name: extra
             data_type: DOUBLE
+            description: "Miscellaneous extras and surcharges. Currently, this only includes
+        the $0.50 and $1 rush hour and overnight charges."
+            tests:    
+                   - dbt_expectations.expect_column_to_exist
+            
+
           - name: mta_tax
             data_type: DOUBLE
+            description: "$0.50 MTA tax that is automatically triggered based on the metered
+        rate in use."
+            tests:    
+                  - dbt_expectations.expect_column_to_exist
+            
           - name: tip_amount
             data_type: DOUBLE
+            description: "Tip amount – This field is automatically populated for credit card
+        tips. Cash tips are not included."
+            tests:    
+                 - dbt_expectations.expect_column_to_exist
+             
           - name: tolls_amount
             data_type: DOUBLE
+            description: "Total amount of all tolls paid in trip"
+            tests:    
+                  - dbt_expectations.expect_column_to_exist
+           
           - name: ehail_fee
             data_type: INTEGER
+
+
           - name: improvement_surcharge
             data_type: DOUBLE
+            description: "$0.30 improvement surcharge assessed trips at the flag drop. The
+        improvement surcharge began being levied in 2015"
+            tests:    
+                - dbt_expectations.expect_column_to_exist
+           
           - name: total_amount
             data_type: DOUBLE
+            description: "The total amount charged to passengers. Does not include cash tips"
+            tests:    
+                - dbt_expectations.expect_column_to_exist
+           
           - name: payment_type
             data_type: DOUBLE
+            description: "A numeric code signifying how the passenger paid for the trip"
+            tests:   
+               - accepted_values: 
+                    values: ['0','1','2','3','4','5','6']
+                    config:
+                      severity: warn
+    
           - name: trip_type
             data_type: DOUBLE
+            tests:
+              - accepted_values: 
+                   values: ['1','2']
+                   config:
+                     severity: warn
+
           - name: congestion_surcharge
             data_type: DOUBLE
+            description: ""
+            tests:    
+                - dbt_expectations.expect_column_to_exist
+        
+
           - name: filename
             data_type: CHARACTER VARYING(256)
+            description: "File Name"
+            tests:    
+                 - dbt_expectations.expect_column_to_exist
+                 - not_null
+   
 
       - name: yellow_tripdata
         columns:
           - name: vendorid
             data_type: BIGINT
+            description: "A code indicating the TPEP provider that provided the record"
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
+
           - name: tpep_pickup_datetime
             data_type: TIMESTAMP
+            description: "The date and time when the meter was engaged"
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
+
           - name: tpep_dropoff_datetime
             data_type: TIMESTAMP
+            description: "The date and time when the meter was disengaged"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: passenger_count
             data_type: DOUBLE
+            description:  "The number of passengers in the vehicle"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: trip_distance
             data_type: DOUBLE
+            description: "The elapsed trip distance in miles reported by the taximeter"
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
+
           - name: ratecodeid
             data_type: DOUBLE
+            description: "The final rate code in effect at the end of the trip"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+            
           - name: store_and_fwd_flag
             data_type: CHARACTER VARYING(256)
+            description: "This flag indicates whether the trip record was held in vehicle
+        memory before sending to the vendor, aka ,store and forwar,
+        because the vehicle did not have a connection to the serve"
+            tests:
+              - accepted_values: 
+                   values: ['Y','N']
+                   config:
+                     severity: warn
+
           - name: pulocationid
             data_type: BIGINT
+            description: "TLC Taxi Zone in which the taximeter was engaged"
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
+
           - name: dolocationid
             data_type: BIGINT
+            description: "TLC Taxi Zone in which the taximeter was disengaged"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+              
           - name: payment_type
             data_type: BIGINT
+            description: "A numeric code signifying how the passenger paid for the trip"
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
+               - accepted_values: 
+                    values: ['0','1','2','3','4','5','6']
+                    config:
+                      severity: warn
+
           - name: fare_amount
             data_type: DOUBLE
+            description:  "The time-and-distance fare calculated by the meter"
+            tests: 
+               - not_null 
+               - dbt_expectations.expect_column_to_exist
+
           - name: extra
             data_type: DOUBLE
+            description: "Miscellaneous extras and surcharges. Currently, this only includes
+        the $0.50 and $1 rush hour and overnight charges"
+            tests:
+               - dbt_expectations.expect_column_to_exist
+
           - name: mta_tax
             data_type: DOUBLE
+            description: "$0.50 MTA tax that is automatically triggered based on the metered
+        rate in use"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: tip_amount
             data_type: DOUBLE
+            description: "Tip amount This field is automatically populated for credit card
+        tips. Cash tips are not included."
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: tolls_amount
             data_type: DOUBLE
+            description: "Total amount of all tolls paid in trip"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: improvement_surcharge
             data_type: DOUBLE
+            description: "$0.30 improvement surcharge assessed trips at the flag drop. The
+        improvement surcharge began being levied in 2015"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: total_amount
             data_type: DOUBLE
+            description: "The total amount charged to passengers. Does not include cash tips"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: congestion_surcharge
             data_type: DOUBLE
+            description: "Total amount collected in trip for NYS congestion surcharge"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: airport_fee
             data_type: DOUBLE
+            description: "$1.25 for pick up only at LaGuardia and John F. Kennedy Airports"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
           - name: filename
             data_type: CHARACTER VARYING(256)
+            description: "File name "
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
+
+      - name: fhvhv_tripdata
+        columns:
+          - name: hvfhs_license_num
+            data_type: varchar
+            description: "The TLC license number of the HVFHS base or business
+As of September 2019, the HVFHS licensees are the following:"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+               - accepted_values:
+                    values: ['HV0002', 'HV0003', 'HV0004', 'HV0005']
+          
+
+          - name: dispatching_base_num
+            data_type: varchar
+            description: "The TLC Base License Number of the base that dispatched the trip"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+              
+          - name: originating_base_num
+            data_type: varchar
+            description: "base number of the base that received the original trip request"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+     
+
+          - name: request_datetime
+            data_type: timestamp
+            description: "date/time when passenger requested to be picked up"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+             
+
+          - name: on_scene_datetime
+            data_type: timestamp
+            description: "date/time when driver arrived at the pick-up location (Accessible
+            Vehicles-only)"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
+
+          - name: pickup_datetime
+            data_type: timestamp
+            description: "The date and time of the trip pick-up"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
+
+          - name: dropoff_datetime
+            data_type: timestamp
+            description: "The date and time of the trip drop-off"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
+          - name: pulocationid
+            data_type: bigint
+            description: "TLC Taxi Zone in which the trip began"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+          - name: dolocationid
+            data_type: bigint
+            description: "TLC Taxi Zone in which the trip ended"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
+          - name: trip_miles
+            data_type: double
+            description: "total miles for passenger trip"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: trip_time
+            data_type: bigint
+            description: "total time in seconds for passenger trip"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: base_passenger_fare
+            data_type: double
+            description: "base passenger fare before tolls, tips, taxes, and fees"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: tolls
+            data_type: double
+            description: "total amount of all tolls paid in trip"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: bcf
+            data_type: double
+            description: "total amount collected in trip for Black Car Fund"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: sales_tax
+            data_type: double
+            description: "total amount collected in trip for NYS sales tax"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: congestion_surcharge
+            data_type: double
+            description: "total amount collected in trip for NYS congestion surcharge"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: airport_fee
+            data_type: double
+            description: "$2.50 for both drop off and pick up at LaGuardia, Newark, and John
+            F. Kennedy airports"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+
+          - name: tips
+            data_type: double
+            description: "total amount of tips received from passenger"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+
+          - name: driver_pay
+            data_type: double
+            description: "total driver pay (not including tolls or tips and net of commission,
+            surcharges, or taxes)"
+            tests: 
+               - dbt_expectations.expect_column_to_exist
+               - not_null
+
+          - name: shared_request_flag
+            data_type: varchar
+            description: "Did the passenger agree to a shared/pooled ride, regardless of
+            whether they were matched? (Y/N)"
+            tests:
+              - dbt_expectations.expect_column_to_exist
+              - accepted_values: 
+                   values: ['Y','N']
+                   config:
+                     severity: warn
+
+          - name: shared_match_flag
+            data_type: varchar
+            description: "Did the passenger share the vehicle with another passenger who
+booked separately at any point during the trip? (Y/N)"
+            tests:
+              - dbt_expectations.expect_column_to_exist
+              - accepted_values: 
+                   values: ['Y','N']
+                   config:
+                     severity: warn
+
+
+          - name: access_a_ride_flag
+            data_type: varchar
+            description: "Was the trip administered on behalf of the Metropolitan
+Transportation Authority (MTA)? (Y/N)"
+            tests:
+              - dbt_expectations.expect_column_to_exist
+              - accepted_values: 
+                   values: ['Y','N']
+                   config:
+                     severity: warn
+
+          - name: wav_request_flag
+            data_type: varchar
+            description: "Did the passenger request a wheelchair-accessible vehicle (WAV)?
+(Y/N)"
+            tests:
+              - dbt_expectations.expect_column_to_exist
+              - accepted_values: 
+                   values: ['Y','N']
+                   config:
+                     severity: warn
+
+          - name: wav_match_flag
+            data_type: varchar
+            description: "Did the trip occur in a wheelchair-accessible vehicle (WAV)? (Y/N)"
+            tests:
+              - dbt_expectations.expect_column_to_exist
+              - accepted_values: 
+                   values: ['Y','N']
+                   config:
+                     severity: warn
+
+          - name: filename
+            data_type: varchar
+            description: "File Name"
+            tests:
+              - dbt_expectations.expect_column_to_exist
+              - not_null

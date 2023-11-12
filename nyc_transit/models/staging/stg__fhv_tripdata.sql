@@ -18,6 +18,12 @@ renamed as (
 
     from source
 
+       /*remove dates that are  located in the future */
+        WHERE 
+        (pickup_datetime) <= TIMESTAMP '2022-12-31' AND
+        (dropOff_datetime) <= TIMESTAMP '2022-12-31'
+
 )
 
 select * from renamed
+

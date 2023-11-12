@@ -44,7 +44,7 @@ renamed as (
 select
 	coalesce(starttime, started_at)::timestamp as started_at_ts,
 	coalesce(stoptime, ended_at)::timestamp as ended_at_ts,
-	coalesce(tripduration::int,datediff('second', started_at_ts, ended_at_ts)) tripduration,
+	coalesce(tripduration::int,datediff('second', started_at_ts, ended_at_ts)):: bigint as tripduration,  -- modify to big integer
 	coalesce("start station id", start_station_id) as start_station_id,  
 	coalesce("start station name", start_station_name) as start_station_name,
 	coalesce("start station latitude", start_lat)::double as start_lat,
@@ -55,3 +55,5 @@ select
 	coalesce("end station longitude", end_lng)::double as end_lng,
 	filename
 from renamed
+  WHERE tripduration > 0 -- drop  negative durations
+     
