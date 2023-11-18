@@ -12,8 +12,7 @@ renamed as (
         date::date as date,
         awnd::double as awnd,
         prcp::double as prcp,
-       /*replace nulls by 0,*/
-        (CASE WHEN snow IS NULL THEN 0 ELSE snow END)::double AS snow,   
+        snow::double as snow,
         snwd::double as snwd,
         tmax::int as tmax,
         tmin::int as tmin,
@@ -33,6 +32,3 @@ select
     tmin,
     filename
 from renamed
-where snow is not null  
-
-

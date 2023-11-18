@@ -34,9 +34,7 @@ renamed as (
         filename
 
     from source
-    Where  trip_miles >=0 AND trip_miles <= 100  AND  -- drop trips with more than 100 miles 
-          base_passenger_fare>=0   -- drop negative number
- 
+
 )
 
 select * from renamed
