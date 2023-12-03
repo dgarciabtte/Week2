@@ -1,0 +1,124 @@
++---------------+-----------------------------------------------+-------------+----------------------+
+|    Borough    |                     Zone                      | total_trips | average_duration_min |
++---------------+-----------------------------------------------+-------------+----------------------+
+| Bronx         | Allerton/Pelham Gardens                       | 79265       | 15.065363022771715   |
+| Bronx         | Bronx Park                                    | 15648       | 19.901904396728018   |
+| Bronx         | City Island                                   | 7759        | 23.2548008764016     |
+| Bronx         | Country Club                                  | 10361       | 15.97558150757649    |
+| Bronx         | Crotona Park                                  | 5848        | 15.787790697674419   |
+| Bronx         | Crotona Park East                             | 97095       | 15.290787373191204   |
+| Bronx         | Fordham South                                 | 88003       | 15.74116791473018    |
+| Bronx         | Longwood                                      | 89396       | 16.32760973645353    |
+| Bronx         | Parkchester                                   | 95768       | 16.26066118118787    |
+| Bronx         | Pelham Bay                                    | 44926       | 15.313537817744736   |
+| Bronx         | Pelham Bay Park                               | 7961        | 15.802914206757945   |
+| Bronx         | Rikers Island                                 | 15          | 24.6                 |
+| Bronx         | Riverdale/North Riverdale/Fieldston           | 54622       | 17.80527992384021    |
+| Bronx         | Van Cortlandt Park                            | 21897       | 15.149792208978399   |
+| Bronx         | Westchester Village/Unionport                 | 92018       | 15.32689256449825    |
+| Brooklyn      | Bath Beach                                    | 37672       | 16.881264599702696   |
+| Brooklyn      | Bensonhurst East                              | 88734       | 16.37171771812383    |
+| Brooklyn      | Brighton Beach                                | 73674       | 16.160056464967287   |
+| Brooklyn      | Brooklyn Navy Yard                            | 27056       | 18.432177705499704   |
+| Brooklyn      | Carroll Gardens                               | 77416       | 18.393626640487753   |
+| Brooklyn      | Cobble Hill                                   | 47298       | 18.720432153579434   |
+| Brooklyn      | Columbia Street                               | 17436       | 18.01095434732737    |
+| Brooklyn      | Coney Island                                  | 91813       | 20.362377876771262   |
+| Brooklyn      | Dyker Heights                                 | 53901       | 16.761266024749077   |
+| Brooklyn      | Gowanus                                       | 64439       | 18.07912909883766    |
+| Brooklyn      | Gravesend                                     | 50696       | 16.34531323970333    |
+| Brooklyn      | Green-Wood Cemetery                           | 1550        | 17.55677419354839    |
+| Brooklyn      | Kensington                                    | 67987       | 18.477032373836174   |
+| Brooklyn      | Madison                                       | 79677       | 15.89270429358535    |
+| Brooklyn      | Manhattan Beach                               | 37735       | 15.843407976679476   |
+| Brooklyn      | Marine Park/Floyd Bennett Field               | 3598        | 21.713451917732073   |
+| Brooklyn      | Ocean Parkway South                           | 36465       | 15.511860688331277   |
+| Brooklyn      | Prospect Park                                 | 20788       | 19.56777948816625    |
+| Brooklyn      | Red Hook                                      | 63855       | 20.708433168898285   |
+| Brooklyn      | South Williamsburg                            | 54588       | 15.526580933538506   |
+| Brooklyn      | Starrett City                                 | 48659       | 17.536509176103085   |
+| Brooklyn      | Sunset Park East                              | 79236       | 18.55488666767631    |
+| Brooklyn      | Windsor Terrace                               | 46775       | 18.98680919294495    |
+| EWR           | Newark Airport                                | 1972        | 33.864604462474645   |
+| Manhattan     | Battery Park                                  | 4882        | 21.843506759524786   |
+| Manhattan     | Bloomingdale                                  | 73275       | 17.322674854998294   |
+| Manhattan     | Chinatown                                     | 77615       | 18.950666752560718   |
+| Manhattan     | Financial District South                      | 78600       | 21.26706106870229    |
+| Manhattan     | Governor's Island/Ellis Island/Liberty Island | 15          | 16.466666666666665   |
+| Manhattan     | Highbridge Park                               | 3563        | 15.906820095425203   |
+| Manhattan     | Inwood Hill Park                              | 8947        | 17.00268246339555    |
+| Manhattan     | Manhattanville                                | 92770       | 16.575358413280156   |
+| Manhattan     | Marble Hill                                   | 40968       | 14.231107205623902   |
+| Manhattan     | Randalls Island                               | 4668        | 22.017994858611825   |
+| Manhattan     | Roosevelt Island                              | 19646       | 23.891988190980353   |
+| Manhattan     | Seaport                                       | 73303       | 19.618269375059683   |
+| Manhattan     | Stuy Town/Peter Cooper Village                | 76075       | 16.87316464015774    |
+| Queens        | Astoria Park                                  | 1396        | 17.318051575931232   |
+| Queens        | Auburndale                                    | 27380       | 16.395398100803508   |
+| Queens        | Bay Terrace/Fort Totten                       | 22945       | 18.383046415341035   |
+| Queens        | Bayside                                       | 60409       | 16.328278898839578   |
+| Queens        | Bellerose                                     | 24390       | 17.150963509635098   |
+| Queens        | Breezy Point/Fort Tilden/Riis Beach           | 3282        | 29.833028641072517   |
+| Queens        | Briarwood/Jamaica Hills                       | 75436       | 16.67083355427117    |
+| Queens        | Broad Channel                                 | 1592        | 18.12939698492462    |
+| Queens        | Cambria Heights                               | 37529       | 17.122571877747873   |
+| Queens        | College Point                                 | 45617       | 30.297827564285246   |
+| Queens        | Douglaston                                    | 17748       | 17.60637818345729    |
+| Queens        | East Elmhurst                                 | 80637       | 17.96934409762268    |
+| Queens        | East Flushing                                 | 35664       | 25.942659264244057   |
+| Queens        | Elmhurst/Maspeth                              | 66595       | 15.589368571214056   |
+| Queens        | Far Rockaway                                  | 67725       | 24.039896640826875   |
+| Queens        | Flushing Meadows-Corona Park                  | 17047       | 24.186191118671907   |
+| Queens        | Forest Park/Highland Park                     | 5044        | 18.013481363996828   |
+| Queens        | Fresh Meadows                                 | 28603       | 16.87616683564661    |
+| Queens        | Glen Oaks                                     | 24764       | 19.075593603618156   |
+| Queens        | Glendale                                      | 82127       | 16.16250441389555    |
+| Queens        | Hammels/Arverne                               | 60146       | 23.32447710570944    |
+| Queens        | Hillcrest/Pomonok                             | 73436       | 18.078599052235962   |
+| Queens        | Hollis                                        | 41159       | 17.056318180713816   |
+| Queens        | Howard Beach                                  | 43638       | 16.349763967184565   |
+| Queens        | Jamaica Bay                                   | 78          | 28.435897435897434   |
+| Queens        | Jamaica Estates                               | 50828       | 16.838848666089557   |
+| Queens        | Kew Gardens                                   | 69361       | 16.201467683568577   |
+| Queens        | Kew Gardens Hills                             | 55931       | 17.53805581877671    |
+| Queens        | Laurelton                                     | 61747       | 15.780863847636322   |
+| Queens        | Long Island City/Queens Plaza                 | 88236       | 18.958338999954666   |
+| Queens        | Maspeth                                       | 86141       | 15.85153411267573    |
+| Queens        | Middle Village                                | 68618       | 16.728190853711855   |
+| Queens        | Murray Hill-Queens                            | 63990       | 26.278934208470073   |
+| Queens        | North Corona                                  | 85988       | 15.525177931804437   |
+| Queens        | Oakland Gardens                               | 21147       | 17.54934506076512    |
+| Queens        | Ozone Park                                    | 53590       | 15.671319275984326   |
+| Queens        | Queens Village                                | 90845       | 16.637393362320434   |
+| Queens        | Queensboro Hill                               | 42418       | 23.590480456410013   |
+| Queens        | Queensbridge/Ravenswood                       | 54857       | 18.345972255136083   |
+| Queens        | Rego Park                                     | 86465       | 17.359047013242353   |
+| Queens        | Rockaway Park                                 | 20327       | 22.484232793821025   |
+| Queens        | Rosedale                                      | 59334       | 16.116240266963292   |
+| Queens        | Saint Michaels Cemetery/Woodside              | 11618       | 12.418746772249957   |
+| Queens        | Springfield Gardens North                     | 75061       | 16.34690451765897    |
+| Queens        | Springfield Gardens South                     | 67034       | 16.496733001163587   |
+| Queens        | Whitestone                                    | 43750       | 24.57638857142857    |
+| Queens        | Willets Point                                 | 2213        | 20.77722548576593    |
+| Staten Island | Arden Heights                                 | 8881        | 16.895845062492963   |
+| Staten Island | Arrochar/Fort Wadsworth                       | 18322       | 18.03645890186661    |
+| Staten Island | Bloomfield/Emerson Hill                       | 46416       | 16.703765942778354   |
+| Staten Island | Charleston/Tottenville                        | 13165       | 17.707633877706037   |
+| Staten Island | Eltingville/Annadale/Prince's Bay             | 13082       | 16.791010548845744   |
+| Staten Island | Freshkills Park                               | 786         | 17.419847328244273   |
+| Staten Island | Great Kills                                   | 19833       | 17.302122724751676   |
+| Staten Island | Great Kills Park                              | 63          | 18.174603174603174   |
+| Staten Island | Grymes Hill/Clifton                           | 34148       | 24.31629963687478    |
+| Staten Island | Heartland Village/Todt Hill                   | 32996       | 17.558340404897564   |
+| Staten Island | Mariners Harbor                               | 45161       | 15.842806846615442   |
+| Staten Island | New Dorp/Midland Beach                        | 18331       | 17.311166875784192   |
+| Staten Island | Oakwood                                       | 10949       | 18.36770481322495    |
+| Staten Island | Port Richmond                                 | 22583       | 16.94951955010406    |
+| Staten Island | Rossville/Woodrow                             | 7700        | 17.166753246753245   |
+| Staten Island | Saint George/New Brighton                     | 79076       | 15.68737670089534    |
+| Staten Island | South Beach/Dongan Hills                      | 26885       | 18.175674167751534   |
+| Staten Island | Stapleton                                     | 62147       | 23.438556969765234   |
+| Staten Island | West Brighton                                 | 25899       | 16.656125719139734   |
+| Staten Island | Westerleigh                                   | 24261       | 14.828448950991303   |
+| Unknown       | NA                                            | 29324       | 35.66147183194653    |
++---------------+-----------------------------------------------+-------------+----------------------+

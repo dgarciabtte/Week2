@@ -12,7 +12,7 @@ with trips_renamed as
     union all 
     select 'yellow' as type, tpep_pickup_datetime, tpep_dropoff_datetime, pulocationid, dolocationid
     from {{ref('stg__yellow_tripdata')}}
-     
+    
 )
 
 Select 
